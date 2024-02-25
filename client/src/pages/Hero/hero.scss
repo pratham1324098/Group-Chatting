@@ -1,11 +1,11 @@
 $primary-color: rgb(163, 27, 27);
 
 body {
-  background-image:url("./bgimage.jpg");
+  background-image:url("../../../public/assets/images/bgimage.jpg");
   background-size: cover;
   overflow-x: hidden; /* Prevent horizontal scrolling */
   font-size: 16px; /* Default font size */
-  background-repeat: no-repeat; /* Ensure gradient doesn't repeat */
+  background-repeat: no-repeat; /* Ensre gradient doesn't repeat */
 
 }
 
@@ -138,7 +138,8 @@ body {
 }
 
 .login-button {
-  background-color: $primary-color;
+  background-color: rgb(245, 96, 96);
+  font-size: 15px;
   color: #fff;
   border: none;
   padding: 15px 30px;
@@ -148,7 +149,7 @@ body {
   margin-top: 10px;
 
   &:hover {
-    background-color: #32363a;
+    background-color: #f72b03;
   }
 }
 
