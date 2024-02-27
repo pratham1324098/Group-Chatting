@@ -1,0 +1,95 @@
+.central {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .main_cont {
+        background-color: rgb(117, 133, 135);
+        height: 80vh;
+        width: 80vw;
+        border-radius: 1rem;
+        display: flex;
+        border: 2rem solid rgb(58, 70, 71);
+
+        .first_cont {
+            width: 30%;
+            height: 80vh;
+            border-radius: 2rem;
+            padding: 10px;
+
+            .first_cont_1 {
+                margin-top: 2%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .first_cont_2 {
+                display: flex;
+                margin-top: 2%;
+                justify-content: center;
+                align-items: center;
+                font-size: 1rem;
+                border: 1px solid rgb(5, 15, 9);
+                border-radius: 3rem;
+                background-color: rgb(15, 16, 16);
+
+                input {
+                    border: none;
+                    width: 60%;
+                    text-align: left;
+                    color: white;
+                    height: 2.5rem;
+                    border-radius: 2rem;
+                    margin: 2% 0%;
+                    font-size: 1rem;
+                    background-color: black;
+                }
+            }
+        }
+
+        .second_cont {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; 
+            align-items: center;
+            width: 70%;
+            background-color: black;
+            position: relative; 
+            padding-bottom: 2rem; 
+
+            .message-input {
+                display: flex;
+                align-items: center;
+                width: 80%;
+                position: absolute; 
+                bottom: 0; 
+                margin-bottom: 1rem; 
+                
+                input {
+                    padding: 1rem;
+                    width: 70%;
+                    margin-right: 0.5rem;
+                    font-size: 1rem;
+                    border-radius: 5rem;
+                }
+
+                button {
+                    padding: 1rem;
+                    font-size: 1rem;
+                    border-radius: 1rem;
+                }
+            }
+        }
+    }
+}
+.center-input {
+    text-align: center;
+}
+
+.center-input input[type="text"] {
+    text-align: left;
+    padding-left: 5rem; /* Adjust as needed */
+    padding-right: 2.5rem; /* Adjust as needed */
+}

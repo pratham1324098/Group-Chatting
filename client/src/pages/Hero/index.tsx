@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./hero.scss";
 
 type Props = {};
@@ -32,7 +33,9 @@ export default function index({}: Props) {
               <input type="text" className="animated-input" />
             </div>
           </div>
+          <Link to="/central">
           <button className="login-button">Enter Room</button>
+          </Link>
         </div>
       </div>
     </>
