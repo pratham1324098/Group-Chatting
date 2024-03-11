@@ -7,6 +7,7 @@ $primary-light-gray: #d9d9d9;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  position: relative;
 
   .main_cont {
     background-color: $primary-black;
@@ -88,10 +89,52 @@ $primary-light-gray: #d9d9d9;
       }
     }
   }
+
+  .leave {
+    background-color: rgb(245, 96, 96);
+    color: white;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+  }
 }
 
 .center-input input[type="text"] {
   text-align: left;
   padding-left: 2.5rem; /* Adjust as needed */
   padding-right: 2.5rem; /* Adjust as needed */
+}
+
+.message_cont {
+  position: relative;
+  padding: 1rem;
+  background-color: $primary-black;
+  margin: 0.5rem 1rem;
+  .message {
+    width: 100%;
+  }
+  .sender {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    color: $primary-light-gray;
+    text-transform: capitalize;
+  }
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 25px solid $primary-black; /* Adjust the color as needed */
+  transform: rotateZ(60deg);
+  position: absolute;
+  right: 0;
+}
+
+.reverse {
+  left: 0.5rem;
 }

@@ -57,6 +57,15 @@ export default function Hero({}: Props) {
                 className="animated-input"
                 value={room}
                 onChange={(e) => setRoom(e.target.value)}
+                onKeyDown={(e) => {
+                  if (
+                    e.key === "Enter" ||
+                    e.key === "Go" ||
+                    e.key === "Return"
+                  ) {
+                    handleJoinRoom();
+                  }
+                }}
               />
             </div>
           </div>
