@@ -3,10 +3,15 @@
 Never touch the master branch
 
 Setup Your own:
+
 ```git clone``` the repository
+
 ```cd server ; npm install```
+
 ```cd ../client ; npm install```
+
 ```npm start```
+
 ```cd ../server ; npm start```
 
 Demonstration:
