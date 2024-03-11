@@ -1,20 +1,51 @@
 const express = require("express");
-const dotenv = require("dotenv");
-dotenv.config();
+const http = require("http");
+const socket = require("socket.io");
 
 const app = express();
-app.use(express.json());
-
-const PORT = process.env.PORT || 8001;
-
-app.get("*", (req, res) => {
-  res.send({ ping: "pong" });
+const server = http.createServer(app);
+const io = socket(server, {
+  cors: {
+    origin: "*",
+  },
 });
 
-const start = async () => {
-  app.listen(PORT, (req, res) => {
-    console.log("Server listening on port: ", PORT);
-  });
-};
+io.on("connection", (socket) => {
+  console.log(`Client connected with ID: ${socket.id}`);
 
-start();
+  // Joining a room
+  socket.on("joinRoom", (data) => {
+    socket.join(data.room);
+    io.to(data.room).emit("joinRoom", {
+      username: data.username,
+      room: data.room,
+    });
+    console.log(`Client ${socket.id} joined room ${data.room}`);
+  });
+
+  // Handling messages within a room
+  socket.on("sendMessage", (data) => {
+    // Broadcasting to all clients in the same room
+    console.log("New Message, ", data);
+    io.to(data.roomName).emit("recieveMessage", data.message);
+  });
+
+  // Leaving a room
+  socket.on("leaveRoom", (roomName) => {
+    socket.leave(roomName);
+    console.log(`Client ${socket.id} left room ${roomName}`);
+  });
+
+  // Clean up on disconnect
+  socket.on("disconnect", () => {
+    console.log(`Client disconnected with ID: ${socket.id}`);
+  });
+});
+
+server.listen(8000, () => {
+  console.log("Socket is running on port 8000");
+});
+
+app.listen(8001, () => {
+  console.log("Server running on port 8001");
+});

@@ -1,95 +1,97 @@
+$primary-black: #000000;
+$primary-gray: #3a3a3a;
+$primary-light-gray: #d9d9d9;
+
 .central {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .main_cont {
+    background-color: $primary-black;
+    height: 80vh;
+    width: 80vw;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    color: white;
 
-    .main_cont {
-        background-color: rgb(117, 133, 135);
-        height: 80vh;
-        width: 80vw;
-        border-radius: 1rem;
+    .first_cont {
+      width: 30%;
+      height: 80vh;
+      padding: 10px;
+
+      .first_cont_1 {
+        margin-top: 2%;
         display: flex;
-        border: 2rem solid rgb(58, 70, 71);
+        flex-direction: column;
+        align-items: center;
+      }
 
-        .first_cont {
-            width: 30%;
-            height: 80vh;
-            border-radius: 2rem;
-            padding: 10px;
+      .first_cont_2 {
+        display: flex;
+        margin-block: 1rem;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        border: 1px solid rgb(5, 15, 9);
+        border-radius: 3rem;
+        background-color: $primary-black;
+        border: 1px solid $primary-gray;
 
-            .first_cont_1 {
-                margin-top: 2%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .first_cont_2 {
-                display: flex;
-                margin-top: 2%;
-                justify-content: center;
-                align-items: center;
-                font-size: 1rem;
-                border: 1px solid rgb(5, 15, 9);
-                border-radius: 3rem;
-                background-color: rgb(15, 16, 16);
-
-                input {
-                    border: none;
-                    width: 60%;
-                    text-align: left;
-                    color: white;
-                    height: 2.5rem;
-                    border-radius: 2rem;
-                    margin: 2% 0%;
-                    font-size: 1rem;
-                    background-color: black;
-                }
-            }
+        .center-input {
+          text-align: center;
         }
 
-        .second_cont {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; 
-            align-items: center;
-            width: 70%;
-            background-color: black;
-            position: relative; 
-            padding-bottom: 2rem; 
-
-            .message-input {
-                display: flex;
-                align-items: center;
-                width: 80%;
-                position: absolute; 
-                bottom: 0; 
-                margin-bottom: 1rem; 
-                
-                input {
-                    padding: 1rem;
-                    width: 70%;
-                    margin-right: 0.5rem;
-                    font-size: 1rem;
-                    border-radius: 5rem;
-                }
-
-                button {
-                    padding: 1rem;
-                    font-size: 1rem;
-                    border-radius: 1rem;
-                }
-            }
+        input {
+          border: none;
+          width: 60%;
+          text-align: left;
+          color: white;
+          height: 2.5rem;
+          border-radius: 2rem;
+          margin: 2% 0%;
+          font-size: 1rem;
+          background-color: $primary-black;
+          outline: none;
         }
+      }
     }
-}
-.center-input {
-    text-align: center;
+
+    .second_cont {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 100%;
+      background-color: $primary-gray;
+      position: relative;
+
+      .input-cont {
+        width: 95%;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 2rem;
+
+        input {
+          padding: 1rem;
+          width: 100%;
+          max-width: 80%;
+          font-size: 1rem;
+          border-radius: 5rem;
+        }
+
+        button {
+          padding: 1rem;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 }
 
 .center-input input[type="text"] {
-    text-align: left;
-    padding-left: 5rem; /* Adjust as needed */
-    padding-right: 2.5rem; /* Adjust as needed */
+  text-align: left;
+  padding-left: 2.5rem; /* Adjust as needed */
+  padding-right: 2.5rem; /* Adjust as needed */
 }

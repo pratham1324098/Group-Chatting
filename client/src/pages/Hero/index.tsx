@@ -1,9 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./hero.scss";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
-type Props = {};
+interface Props {}
 
-export default function index({}: Props) {
+export default function Hero({}: Props) {
+  const [name, setName] = useState<string>("");
+  const [room, setRoom] = useState<string>("");
+  const navigate = useNavigate();
+  const handleJoinRoom = () => {
+    if (name.length < 2 || room.length < 2) {
+      toast.error("Something went wrong");
+      return;
+    }
+
+    localStorage.setItem("loggedIn", "true");
+    localStorage.setItem("room", room);
+    localStorage.setItem("name", name);
+    navigate(`/central/${room}`);
+  };
+
   return (
     <>
       <div className="container">
@@ -26,16 +43,26 @@ export default function index({}: Props) {
           <div className="login-form">
             <div className="input-container">
               <p>Name:</p>
-              <input type="text" className="animated-input" />
+              <input
+                type="text"
+                className="animated-input"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
             <div className="input-container">
               <p>Room Name:</p>
-              <input type="text" className="animated-input" />
+              <input
+                type="text"
+                className="animated-input"
+                value={room}
+                onChange={(e) => setRoom(e.target.value)}
+              />
             </div>
           </div>
-          <Link to="/central">
-          <button className="login-button">Enter Room</button>
-          </Link>
+          <button className="login-button" onClick={handleJoinRoom}>
+            Enter Room
+          </button>
         </div>
       </div>
     </>
