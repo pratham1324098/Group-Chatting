@@ -2,7 +2,9 @@
 
 Never touch the master branch
 
-Setup Your own:
+### Setup Your own:
+
+> create your own mongodb atlas instance and update MONGO_URI in .env of server
 
 ```git clone``` the repository
 
